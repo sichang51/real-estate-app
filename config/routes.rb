@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "/residentials" => "residentials#index"
   post "/residentials" => "residentials#create"
+  get "/residentials/:id" => "residentials#show"
 end

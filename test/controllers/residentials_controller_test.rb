@@ -18,4 +18,12 @@ class ResidentialsControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/residentials/#{Residential.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["id", "description", "year_built", "square_feet", "bedrooms", "bathrooms", "floors", "availability", "address", "price", "created_at", "updated_at"], data.keys
+  end
 end

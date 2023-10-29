@@ -18,4 +18,9 @@ class ResidentialsController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @residential = Residential.find_by(id: params[:id])
+    render :show
+  end
 end
