@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get "/residentials" => "residentials#index"
   post "/residentials" => "residentials#create"
   get "/residentials/:id" => "residentials#show"
+  delete "/residentials/:id" => "residentials#destroy"
 end

@@ -23,4 +23,10 @@ class ResidentialsController < ApplicationController
     @residential = Residential.find_by(id: params[:id])
     render :show
   end
+
+  def destroy
+    @residential = Residential.find_by(id: params[:id])
+    @residential.destroy
+    render json: { message: "Record destroyed successfully" }
+  end
 end
